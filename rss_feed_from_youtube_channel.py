@@ -42,7 +42,7 @@ with open(fn, "r") as fin:
             channel_id = get_channel_id_from_url(line[0])
             rss_url = get_rss_url_from_channel_id(channel_id)
         except urllib.error.HTTPError as e:
-            sys.stderr.write(line[0] + " " + str(e))
+            sys.stderr.write(line[0] + " " + str(e) + '\n')
             continue
         try:
             tags = line[1:]
